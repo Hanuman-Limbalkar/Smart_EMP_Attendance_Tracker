@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 27% 8%;
+    --foreground: 210 40% 98%;
+    --card: 220 27% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 220 27% 12%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 263 70% 50%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 220 27% 16%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 220 27% 16%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 263 70% 50%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 27% 20%;
+    --input: 220 27% 16%;
+    --ring: 263 70% 50%;
+    --radius: 0.75rem;
+    --chart-1: 263 70% 50%;
+    --chart-2: 280 100% 70%;
+    --chart-3: 300 100% 80%;
+    --chart-4: 320 100% 75%;
+    --chart-5: 340 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  /* Galaxy background animation */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(2px 2px at 20px 30px, #eee, transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.8), transparent),
+      radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(255, 255, 255, 0.6), transparent),
+      radial-gradient(2px 2px at 160px 30px, #ddd, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: sparkle 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  @keyframes sparkle {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(200px);
+    }
+  }
+
+  /* Glowing effects */
+  .glow {
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.5);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  }
+
+  .glow-pink {
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.5);
+  }
+
+  /* Card hover effects */
+  .galaxy-card {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+    border: 1px solid rgba(147, 51, 234, 0.3);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+
+  .galaxy-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(147, 51, 234, 0.3);
+    border-color: rgba(147, 51, 234, 0.6);
+  }
+
+  /* Button enhancements */
+  .galaxy-button {
+    background: linear-gradient(135deg, #9333ea 0%, #3b82f6 100%);
+    border: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .galaxy-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .galaxy-button:hover::before {
+    left: 100%;
+  }
+
+  /* Input field styling */
+  .galaxy-input {
+    background: rgba(147, 51, 234, 0.1);
+    border: 1px solid rgba(147, 51, 234, 0.3);
+    backdrop-filter: blur(5px);
+  }
+
+  .galaxy-input:focus {
+    border-color: rgba(147, 51, 234, 0.8);
+    box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+  }
+
+  /* Table styling */
+  .galaxy-table {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .galaxy-table th {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+    border-bottom: 1px solid rgba(147, 51, 234, 0.3);
+  }
+
+  .galaxy-table tr:hover {
+    background: rgba(147, 51, 234, 0.1);
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(147, 51, 234, 0.1);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #9333ea, #3b82f6);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #9333ea 0%, #3b82f6 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-gradient {
+    border: 1px solid;
+    border-image: linear-gradient(135deg, #9333ea, #3b82f6, #ec4899) 1;
+  }
+
+  .bg-galaxy {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+  }
+
+  .bg-galaxy-dark {
+    background: linear-gradient(135deg, rgba(147, 51, 234, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+  }
+}

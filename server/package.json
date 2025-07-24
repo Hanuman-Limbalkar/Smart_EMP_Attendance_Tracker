@@ -1,0 +1,31 @@
+{
+  "name": "employee-attendance-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Employee Management and Attendance Tracker",
+  "main": "debug-server.js",
+  "scripts": {
+    "start": "node debug-server.js",
+    "dev": "node debug-server.js",
+    "debug": "node debug-server.js",
+    "test-connection": "node test-frontend-connection.js",
+    "simple": "node simple-server.js",
+    "auth": "node auth-server.js",
+    "old": "node server.js",
+    "kill-port": "lsof -ti:5000 | xargs kill -9 || echo 'No process on port 5000'",
+    "check-port": "lsof -i :5000 || echo 'Port 5000 is free'"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "pg": "^8.11.3",
+    "dotenv": "^16.3.1",
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["employee", "attendance", "management", "api"],
+  "author": "Your Name",
+  "license": "MIT"
+}
