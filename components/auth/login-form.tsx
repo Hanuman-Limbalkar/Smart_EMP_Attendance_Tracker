@@ -223,7 +223,7 @@ export default function AuthForm({ onLogin }: AuthFormProps) {
             </div>
           </div>
           <div>
-            <CardTitle className="text-3xl font-bold text-gradient"> Employee Management System</CardTitle>
+            <CardTitle className="text-3xl font-bold text-gradient"> Employee Attendance Tracker System</CardTitle>
             <CardDescription className="text-purple-300 flex items-center justify-center gap-2 mt-2">
             </CardDescription>
           </div>
