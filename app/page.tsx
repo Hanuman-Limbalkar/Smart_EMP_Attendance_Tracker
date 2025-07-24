@@ -127,67 +127,81 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
-          <TabsList className="galaxy-card border border-purple-500/30 p-2 h-auto">
-            <TabsTrigger
-              value="dashboard"
-              className="galaxy-button data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-blue-600 data-[state=active]:text-white flex items-center gap-2 px-6 py-3"
-            >
-              <BarChart3 className="h-4 w-4" />
-              Dashboard
-            </TabsTrigger>
-            <TabsTrigger
-              value="employees"
-              className="galaxy-button data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-blue-600 data-[state=active]:text-white flex items-center gap-2 px-6 py-3"
-            >
-              <Users className="h-4 w-4" />
-              Employees
-            </TabsTrigger>
-            <TabsTrigger
-              value="attendance"
-              className="galaxy-button data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-blue-600 data-[state=active]:text-white flex items-center gap-2 px-6 py-3"
-            >
-              <Clock className="h-4 w-4" />
-              Attendance
-            </TabsTrigger>
-            <TabsTrigger
-              value="departments"
-              className="galaxy-button data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-blue-600 data-[state=active]:text-white flex items-center gap-2 px-6 py-3"
-            >
-              <Building2 className="h-4 w-4" />
-              Departments
-            </TabsTrigger>
-            <TabsTrigger
-              value="reports"
-              className="galaxy-button data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-blue-600 data-[state=active]:text-white flex items-center gap-2 px-6 py-3"
-            >
-              <TrendingUp className="h-4 w-4" />
-              Reports
-            </TabsTrigger>
-          </TabsList>
+     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8">
+    
+    {/* Tab Buttons with Unique Colors */}
+    <TabsList className="w-full min-h-[100px] flex flex-wrap justify-center gap-4 p-6 rounded-xl shadow-lg border border-purple-700/30 ">
+      
+      <TabsTrigger
+        value="dashboard"
+        className="px-5 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300
+                   text-white bg-gray-800 hover:bg-purple-700/70
+                   data-[state=active]:bg-gradient-to-r data-[state=active]:from-indigo-500 data-[state=active]:to-purple-600 data-[state=active]:text-white"
+      >
+        <BarChart3 className="h-5 w-5" />
+        Dashboard
+      </TabsTrigger>
 
-          <TabsContent value="dashboard" className="space-y-6">
-            <Dashboard />
-          </TabsContent>
+      <TabsTrigger
+        value="employees"
+        className="px-5 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300
+                   text-white bg-gray-800 hover:bg-green-600/60 border border-purple-700/30
+                   data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-500 data-[state=active]:to-emerald-600 data-[state=active]:text-white"
+      >
+        <Users className="h-5 w-5" />
+        Employees
+      </TabsTrigger>
 
-          <TabsContent value="employees" className="space-y-6">
-            <EmployeeManagement />
-          </TabsContent>
+      <TabsTrigger
+        value="attendance"
+        className="px-5 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300
+                   text-white bg-gray-800 hover:bg-blue-600/60 border border-purple-700/30
+                   data-[state=active]:bg-gradient-to-r data-[state=active]:from-blue-500 data-[state=active]:to-cyan-500 data-[state=active]:text-white"
+      >
+        <Clock className="h-5 w-5" />
+        Attendance
+      </TabsTrigger>
 
-          <TabsContent value="attendance" className="space-y-6">
-            <AttendanceTracking />
-          </TabsContent>
+      <TabsTrigger
+        value="departments"
+        className="px-5 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300
+                   text-white bg-gray-800 hover:bg-yellow-500/70 border border-purple-700/30
+                   data-[state=active]:bg-gradient-to-r data-[state=active]:from-yellow-400 data-[state=active]:to-orange-500 data-[state=active]:text-white"
+      >
+        <Building2 className="h-5 w-5" />
+        Departments
+      </TabsTrigger>
 
-          <TabsContent value="departments" className="space-y-6">
-            <DepartmentManagement />
-          </TabsContent>
+      <TabsTrigger
+        value="reports"
+        className="px-5 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300
+                   text-white bg-gray-800 hover:bg-pink-600/60 border border-purple-700/30
+                   data-[state=active]:bg-gradient-to-r data-[state=active]:from-pink-500 data-[state=active]:to-rose-500 data-[state=active]:text-white"
+      >
+        <TrendingUp className="h-5 w-5" />
+        Reports
+      </TabsTrigger>
+    </TabsList>
 
-          <TabsContent value="reports" className="space-y-6">
-            <Reports />
-          </TabsContent>
-        </Tabs>
-      </main>
+    {/* Tab Content (No style change needed here) */}
+    <TabsContent value="dashboard" className="space-y-6">
+      <Dashboard />
+    </TabsContent>
+    <TabsContent value="employees" className="space-y-6">
+      <EmployeeManagement />
+    </TabsContent>
+    <TabsContent value="attendance" className="space-y-6">
+      <AttendanceTracking />
+    </TabsContent>
+    <TabsContent value="departments" className="space-y-6">
+      <DepartmentManagement />
+    </TabsContent>
+    <TabsContent value="reports" className="space-y-6">
+      <Reports />
+    </TabsContent>
+  </Tabs>
+</main>
 
       {/* Galaxy Footer */}
       <footer className="mt-20 border-t border-purple-500/30 galaxy-card">
@@ -195,7 +209,7 @@ export default function Home() {
           <div className="text-center">
             <p className="text-purple-300 flex items-center justify-center gap-2">
               <Sparkles className="h-4 w-4" />
-              Powered by Galaxy Technology - Welcome, {user.full_name}!
+              Powered by HGL Technology - Welcome, {user.full_name}!
               <Sparkles className="h-4 w-4" />
             </p>
           </div>
