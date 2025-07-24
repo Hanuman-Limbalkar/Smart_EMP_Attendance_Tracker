@@ -342,16 +342,6 @@ export default function AuthForm({ onLogin }: AuthFormProps) {
                     </div>
                   )}
                 </Button>
-
-                <Button
-                  type="button"
-                  variant="outline"
-                  className="w-full border-purple-500/50 text-purple-300 hover:bg-purple-500/10 bg-transparent"
-                  onClick={handleDemoLogin}
-                >
-                  <Zap className="h-4 w-4 mr-2" />
-                  Fill Demo Credentials
-                </Button>
               </form>
             </TabsContent>
 
